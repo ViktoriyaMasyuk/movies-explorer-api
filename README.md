@@ -29,5 +29,8 @@ GET /users/me
 `npm run start` — запускает сервер   
 `npm run dev` — запускает сервер с hot-reload
 
-Cсылка на репозиторий:
+# Cсылка на репозиторий:
 https://github.com/ViktoriyaMasyuk/movies-explorer-api
+
+# Cсылка на сервер:
+https://api.v-masyuk.diplom.nomoreparties.co
