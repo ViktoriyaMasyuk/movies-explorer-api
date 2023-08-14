@@ -38,5 +38,5 @@ mongoose.connect('mongodb://127.0.0.1:27017/bitfilmsdb', {
 
 app.listen(PORT, () => {
   console.log('Ссылка на сервер');
-  console.log(BASE_PATH);
+  console.log(`http://${BASE_PATH}:${PORT}`);
 });
