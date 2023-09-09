@@ -8,13 +8,16 @@ const routes = require('./routes/index');
 const { serverError } = require('./middlewares/serverError');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { limiter } = require('./middlewares/limiter');
+const cors = require('./middlewares/cors');
 
 const { PORT = 3000, BASE_PATH } = process.env;
 const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(helmet({crossOriginEmbedderPolicy: false, crossOriginResourcePolicy: false}));
+//app.use(helmet({crossOriginEmbedderPolicy: false, crossOriginResourcePolicy: false}));
+app.use(helmet());
+app.use(cors);
 
 app.get('/crash-test', () => {
   setTimeout(() => {
