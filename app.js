@@ -8,7 +8,6 @@ const routes = require('./routes/index');
 const { serverError } = require('./middlewares/serverError');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { limiter } = require('./middlewares/limiter');
-const cors = require('./middlewares/cors');
 
 const { PORT = 3000, BASE_PATH } = process.env;
 const app = express();
