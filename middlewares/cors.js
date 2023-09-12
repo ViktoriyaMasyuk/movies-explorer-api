@@ -5,6 +5,8 @@ const allowedCors = [
   'http://192.168.1.154:3001',
   'http://network.mesto.nomoredomains.xyz',
   'https://network.mesto.nomoredomains.xyz',
+  'http://v-masyuk.diplom.nomoredomainsicu.ru',
+  'https://v-masyuk.diplom.nomoredomainsicu.ru'
 ];
 
 const cors = (req, res, next) => {

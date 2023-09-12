@@ -43,7 +43,10 @@ module.exports.createUser = (req, res, next) => {
     .then((hash) => User.create({
       name, email, password: hash,
     }))
-    .then((user) => res.status(201).send(user))
+    .then((user) => {
+      const token = jwt.sign({ _id: user._id }, `${NODE_ENV === 'production' ? JWT_SECRET : 'secret-key'}`, { expiresIn: '7d' });
+      res.send({ token });
+    })
     .catch((err) => {
       if (err.name === 'ValidationError') {
         next(new BadRequest('Переданы некорректные данные при создании пользователя. '));
